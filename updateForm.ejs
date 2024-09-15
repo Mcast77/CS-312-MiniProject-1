@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Update Post</title>
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <%- include("header.ejs") %>
+    <h1 class="center">Update Post</h1>
+    <form action="/uploadUpdate" method="post" class="formLayout">
+      <label for="username">Username: </label><br />
+      <input
+        type="input"
+        id="username"
+        name="username"
+        class="extend"
+        value="<%=blogPost.username%>"
+      /><br />
+      <input type="hidden" id="time" name="time" value="<%=Date()%>" />
+      <input
+        type="hidden"
+        id="identity"
+        name="identity"
+        value="<%=blogPost.identity%>"
+      />
+      <label for="blogTitle">Blog Title: </label><br />
+      <input
+        type="input"
+        id="blogTitle"
+        name="blogTitle"
+        class="extend"
+        value="<%=blogPost.blogTitle%>"
+      /><br />
+      <label for="blogText">Blog Post:</label><br />
+      <textarea id="blogText" name="blogText" class="extend" rows="15">
+<%=blogPost.blogText%></textarea
+      ><br />
+      <input type="submit" value="Publish Update" />
+    </form>
+    <%- include("footer.ejs") %>
+  </body>
+</html>
